@@ -42,5 +42,15 @@ public class GreetingControllerTest {
                 .andExpect(jsonPath("content").value("Hello, Kim!"));
     }
 
+    @Test
+    public void greetingShouldReturnMessageWithName() throws Exception {
+        final ResultActions actions = this.mockMvc.perform(get("/test"))
+                .andDo(print());
+
+        actions
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("id").value(1))
+                .andExpect(jsonPath("content").value("test"));
+    }
 
 }
