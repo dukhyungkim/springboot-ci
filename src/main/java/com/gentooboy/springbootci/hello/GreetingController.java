@@ -19,6 +19,6 @@ public class GreetingController {
 
     @RequestMapping("/test")
     public Greeting greeting() {
-        return new Greeting(0, "test");
+        return new Greeting(1, "test");
     }
 }
